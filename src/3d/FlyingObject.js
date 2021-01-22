@@ -12,6 +12,7 @@ export default function FlyingObject() {
   const { clock, ray } = mutation
   const main = useRef()
   const exhaust = useRef()
+  const spaceship = useRef()
 
   useFrame(() => {
     // setting up clock and exhaust properties
@@ -24,6 +25,9 @@ export default function FlyingObject() {
     main.current.getWorldDirection(direction)
     ray.origin.copy(position)
     ray.direction.copy(direction.negate())
+
+    // sets space ships rotation
+    spaceship.current.rotation.y += 0.01
   })
 
   return (
@@ -33,8 +37,11 @@ export default function FlyingObject() {
       <group scale={[3.5, 3.5, 3.5]}>
         {/* add tetrajhedron here */}
         <group rotation={[Math.PI / 2, Math.PI, 0]}>
-          <mesh scale={[1, 1.3, 1]}>
-            <sphereBufferGeometry attach='geometry' args={[2, 5, 2]}/>
+          <mesh
+          scale={[1, 1.3, 1]}
+          ref={spaceship}
+          >
+            <sphereBufferGeometry attach='geometry' args={[2, 6, 2]}/>
             <meshBasicMaterial attach='material' color='#441d91'/>
           </mesh>
         </group>

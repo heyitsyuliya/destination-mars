@@ -21,7 +21,7 @@ const [useStore, api] = create((set, get) => {
       track,
       scale: 15,
       fov: 90,
-      looptime: 100 * 1000,
+      looptime: 150 * 1000,
       startTime: Date.now(),
       binormal: new THREE.Vector3(),
       normal: new THREE.Vector3(),
