@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import * as THREE from 'three'
 import { Canvas } from 'react-three-fiber'
 import { Stars, OrbitControls } from 'drei'
 import Track from './3d/Track'
 import Effects from './3d/Effects'
+import Planets from './3d/Planets'
 import useStore from './store'
 
 export default function MainScene() {
@@ -15,11 +16,12 @@ export default function MainScene() {
     <Canvas
       concurrent
       gl={{ antialias: false }}
-      // this position is somewhere near the middle 
+      // this position is somewhere near the middle
       camera={{ position: [0, 0, 200], near: 0.01, far: 10000, fov }}
       onCreated={({ gl, camera }) => {
         actions.init(camera)
-        gl.gammaInput = true
+        // .gammaInput has been removed. Set the encoding for textures via Texture.encoding instead.
+        //gl.gammaInput = true
         gl.toneMapping = THREE.LinearToneMapping
         gl.setClearColor(new THREE.Color('#050209'))
       }}>
@@ -27,6 +29,11 @@ export default function MainScene() {
       <ambientLight intensity={0.25} />
       <Stars/>
       <Track/>
+
+      <Suspense fallback={null}>
+        <Planets/>
+      </Suspense>
+
       <Effects/>
       <OrbitControls/>
     </Canvas>
