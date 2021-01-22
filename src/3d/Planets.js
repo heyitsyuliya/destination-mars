@@ -6,10 +6,6 @@ import marsTexture from '../assets/mars_texture.jpg'
 export default function Planets() {
 
   const ref = useRef()
-  // const mars_texture = new THREE.TextureLoader().load('../assets/mars_texture.jpg')
-
-  // figure out use loader
-  // const [ mars_texture] = useLoader(THREE.TextureLoader, [marsTexture])
 
   return (
     <group ref={ref} scale={[100, 100, 100]} position={[-500, -500, 1000]}>
@@ -17,7 +13,6 @@ export default function Planets() {
       {/* Mars */}
       <mesh>
         <sphereBufferGeometry attach='geometry' args={[5, 32, 32]}/>
-        {/* <meshStandardMaterial attach='material' map={mars_texture} roughness={1} fog={false}/> */}
         <meshBasicMaterial attach='material' color='#733912' fog={false}/>
       </mesh>
 

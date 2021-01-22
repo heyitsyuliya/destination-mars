@@ -5,6 +5,7 @@ import { Stars, OrbitControls } from 'drei'
 import Track from './3d/Track'
 import Effects from './3d/Effects'
 import Planets from './3d/Planets'
+import FlyingObject from './3d/FlyingObject'
 import useStore from './store'
 
 export default function MainScene() {
@@ -23,7 +24,7 @@ export default function MainScene() {
         // .gammaInput has been removed. Set the encoding for textures via Texture.encoding instead.
         //gl.gammaInput = true
         gl.toneMapping = THREE.LinearToneMapping
-        gl.setClearColor(new THREE.Color('#050209'))
+        gl.setClearColor(new THREE.Color('#030008'))
       }}>
       <fog attach='fog' args={['#250736', 100, 700]}/>
       <ambientLight intensity={0.25} />
@@ -32,6 +33,7 @@ export default function MainScene() {
 
       <Suspense fallback={null}>
         <Planets/>
+        <FlyingObject />
       </Suspense>
 
       <Effects/>

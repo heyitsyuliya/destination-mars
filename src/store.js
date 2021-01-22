@@ -22,6 +22,7 @@ const [useStore, api] = create((set, get) => {
       binormal: new THREE.Vector3(),
       normal: new THREE.Vector3(),
       clock: new THREE.Clock(false),
+      ray: new THREE.Ray()
     },
 
     actions: {
