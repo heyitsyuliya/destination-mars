@@ -1,5 +1,3 @@
-// new THREE.TubeBufferGeometry(spline, 250, 0.2, 10, true)
-
 import React from 'react'
 import useStore from '../store'
 

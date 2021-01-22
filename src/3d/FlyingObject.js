@@ -1,6 +1,6 @@
-import * as THREE from 'three'
 import React, { useRef } from 'react'
-import { useLoader, useFrame } from 'react-three-fiber'
+import { useFrame } from 'react-three-fiber'
+import * as THREE from 'three'
 import useStore from '../store'
 
 const position = new THREE.Vector3()

@@ -1,7 +1,4 @@
-import * as THREE from 'three'
-import React, { useRef, useMemo } from 'react'
-import { useLoader } from 'react-three-fiber'
-import marsTexture from '../assets/mars_texture.jpg'
+import React, { useRef } from 'react'
 
 export default function Planets() {
 
