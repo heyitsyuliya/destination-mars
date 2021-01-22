@@ -13,7 +13,8 @@
     "react-three-fiber": "^5.3.14",
     "three": "^0.124.0",
     "use-cannon": "^0.5.3",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "zustand": "^3.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
