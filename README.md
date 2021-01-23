@@ -10,7 +10,7 @@ This app was made with following technology:
 - [drei](https://github.com/pmndrs/drei) - a library of abstractions and helpers for react-three-fiber
 - [zustand](https://github.com/pmndrs/zustand) - state management solution based on hooks
 
-Check out Destination Mars [here](link coming soon)
+Check out Destination Mars [here](https://destination-mars.herokuapp.com/)
 Check out Destination Mars demo [here](link coming soon)
 ### Running things on local server:
 
