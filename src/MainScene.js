@@ -27,7 +27,13 @@ export default function MainScene() {
       }}>
       <fog attach='fog' args={['#250736', 100, 700]}/>
       <ambientLight intensity={0.25} />
-      <Stars/>
+
+      <Stars
+        radius={150}
+        count={8000}
+        depth={70}
+        factor={5}
+      />
       <Track/>
 
       <Suspense fallback={null}>
