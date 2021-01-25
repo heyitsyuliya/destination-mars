@@ -35,7 +35,7 @@ export default function FlyingObject() {
 
       {/* flying object group */}
       <group scale={[3.5, 3.5, 3.5]}>
-        {/* add tetrajhedron here */}
+        {/* add tetrahedron here */}
         <group rotation={[Math.PI / 2, Math.PI, 0]}>
           <mesh
           scale={[1, 1.3, 1]}
@@ -45,11 +45,6 @@ export default function FlyingObject() {
             <meshBasicMaterial attach='material' color='#441d91'/>
           </mesh>
         </group>
-        {/* <mesh scale={[1, 2, 1]}>
-          <tetrahedronBufferGeometry attach='geometry' args={[1, 1, 1]}/>
-          <meshBasicMaterial attach='material' color='#030326'/>
-        </mesh> */}
-
       </group>
 
       {/* flying object exhaust */}

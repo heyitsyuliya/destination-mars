@@ -9,6 +9,8 @@ import Planets from './3d/Planets'
 import Track from './3d/Track'
 import useStore from './store'
 import SideMenu from './SideMenu'
+import SpaceRocks from './3d/SpaceRocks'
+import { OrbitControls } from 'drei'
 
 export default function MainScene() {
 
@@ -36,18 +38,23 @@ export default function MainScene() {
           depth={70}
           factor={5}
         />
+
         <Track/>
+
+        <SpaceRocks/>
 
         <Suspense fallback={null}>
           <Planets/>
-          <FlightControls>
+          {/* comment out flight controls and use OrbitControls to test the positioning of the 3D elements */}
+           <FlightControls>
             <FlyingObject />
           </FlightControls>
         </Suspense>
-
+        {/* <OrbitControls /> */}
         <Effects/>
       </Canvas>
       <SideMenu/>
+
     </>
   )
 }
