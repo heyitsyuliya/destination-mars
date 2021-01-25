@@ -8,6 +8,7 @@ import FlyingObject from './3d/FlyingObject'
 import Planets from './3d/Planets'
 import Track from './3d/Track'
 import useStore from './store'
+import SideMenu from './SideMenu'
 
 export default function MainScene() {
 
@@ -15,35 +16,38 @@ export default function MainScene() {
   const actions = useStore(state => state.actions)
 
   return (
-    <Canvas
-      concurrent
-      gl={{ antialias: false }}
-      onPointerMove={actions.updateMouse}
-      camera={{ position: [0, 0, 200], near: 0.01, far: 10000, fov }}
-      onCreated={({ gl, camera }) => {
-        actions.init(camera)
-        gl.toneMapping = THREE.LinearToneMapping
-        gl.setClearColor(new THREE.Color('#030008'))
-      }}>
-      <fog attach='fog' args={['#250736', 100, 700]}/>
-      <ambientLight intensity={0.25} />
+    <>
+      <Canvas
+        concurrent
+        gl={{ antialias: false }}
+        onPointerMove={actions.updateMouse}
+        camera={{ position: [0, 0, 200], near: 0.01, far: 10000, fov }}
+        onCreated={({ gl, camera }) => {
+          actions.init(camera)
+          gl.toneMapping = THREE.LinearToneMapping
+          gl.setClearColor(new THREE.Color('#030008'))
+        }}>
+        <fog attach='fog' args={['#250736', 100, 700]}/>
+        <ambientLight intensity={0.25} />
 
-      <Stars
-        radius={150}
-        count={8000}
-        depth={70}
-        factor={5}
-      />
-      <Track/>
+        <Stars
+          radius={150}
+          count={8000}
+          depth={70}
+          factor={5}
+        />
+        <Track/>
 
-      <Suspense fallback={null}>
-        <Planets/>
-        <FlightControls>
-          <FlyingObject />
-        </FlightControls>
-      </Suspense>
+        <Suspense fallback={null}>
+          <Planets/>
+          <FlightControls>
+            <FlyingObject />
+          </FlightControls>
+        </Suspense>
 
-      <Effects/>
-    </Canvas>
+        <Effects/>
+      </Canvas>
+      <SideMenu/>
+    </>
   )
 }
